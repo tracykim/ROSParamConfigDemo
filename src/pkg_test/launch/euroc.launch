@@ -1,0 +1,10 @@
+<launch>
+   <arg name="arg1" default="this is arg1" />
+   <arg name="arg2" default="this is arg2" />
+   <arg name="config_path" default="$(find pkg_test)/config/config.yaml"/>
+   <param name="n_arg" value="$(arg arg1)" />
+   <node pkg="pkg_test" type="node" name="node" output="screen">
+        <param name="pn_arg" value="$(arg arg2)"/>
+	<param name="config_file" value="$(arg config_path)"/>
+   </node>
+</launch>
